@@ -1,0 +1,10 @@
+development:
+  host: localhost
+  database: pokedex
+
+production:
+  host: localhost
+  port: 1000
+  username: main
+  password: pokemon
+  database: pokedex

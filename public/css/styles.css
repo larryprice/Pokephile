@@ -1,0 +1,12 @@
+#about-body {
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-align: right;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+body {
+	font-family: 'Exo', sans-serif;
+}
