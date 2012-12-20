@@ -1,10 +1,24 @@
 development:
-  host: localhost
-  database: pokedex
+  sessions:
+    default:
+      database: dev_pokedex
+      hosts:
+        - localhost
+      options:
+        consistency: :strong
+  options:
+
+test:
+  sessions:
+    default:
+      database: test_pokedex
+      hosts:
+        - localhost
 
 production:
-  host: localhost
-  port: 1000
-  username: main
-  password: pokemon
-  database: pokedex
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] %>
+      options:
+        skip_version_check: true
+        safe: true

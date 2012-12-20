@@ -1,3 +1,3 @@
-require './pokemon'
+require './app'
 
 run Pokedex.new

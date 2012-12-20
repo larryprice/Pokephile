@@ -1,15 +1,12 @@
 #! /usr/bin/ruby
 
-require 'mongo'
 require 'nokogiri'
 require 'open-uri'
+require '../models/pokemon'
 
 class Populater
 	def initialize()
-		@mongo = Mongo::Connection.new
-		@db = @mongo.db('pokedex')
-		@pokemon = @db['pokemon']
-		@pokemon.drop if @pokemon.size != 0
+    Pokemon.delete_all
 
 		@data = []
 		load_data
@@ -40,8 +37,11 @@ class Populater
       types = Array.new
       types << type_1 unless type_1.nil? || type_1.empty?
       types << type_2 unless type_2.nil? || type_2.empty?
-      
-      @pokemon.insert({:number => dex_num, :name => dex_name, :types => types, :image => image_link})
+
+      monster = Pokemon.new :number => dex_num, :name => dex_name, :types => types, :image => image_link
+      monster.save
+
+      #@pokemon.insert({:number => dex_num, :name => dex_name, :types => types, :image => image_link})
   		break if dex_num.to_i == num.to_i - 1
   	end
   end

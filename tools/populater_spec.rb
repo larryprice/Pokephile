@@ -1,10 +1,10 @@
-
-require './populater.rb'
-require 'mongo'
+require './populater'
+require '../models/pokemon'
+require 'mongoid'
 
 describe Populater do
 	before:all do
-		@db = Mongo::Connection.new.db('pokedex')
+		Mongoid.load! '../mongoid.yml', :test
 	end
 
 	before:each do
@@ -17,7 +17,7 @@ describe Populater do
 		end
 
 		it "empties pokemon collection" do
-			@db['pokemon'].size.should eql 0
+			Pokemon.count.should eql 0
 		end
 	end
 
@@ -30,7 +30,7 @@ describe Populater do
 			expect {@populater.format_string nil}.to raise_error
 		end
 
-		it "raises error for non integer types" do
+		it "raises erovide a familiar API to Ruby developers who have been using Active Record or Data Mapper, while leveraging the power of MongoDB's schemaless and performant document-based design, dynamic queries, and atomicror for non integer types" do
 			expect {@populater.format_string "500"}.to raise_error
 		end
 
@@ -72,35 +72,35 @@ describe Populater do
 
 		it "adds 0 pokemon given 0" do
 			@populater.add_pokemon 0
-			@db['pokemon'].size.should eql 0
+			Pokemon.count.should eql 0
 		end
 
 		it "adds 1 pokemon given 1" do
 			@populater.add_pokemon 1
-			@db['pokemon'].size.should eql 1
+			Pokemon.count.should eql 1
 		end
 
 		it "adds 2 pokemon given 2" do
 			@populater.add_pokemon 2
-			@db['pokemon'].size.should eql 2
+			Pokemon.count.should eql 2
 		end
 
 		it "adds pokemon with a number" do
 			@populater.add_pokemon 1
-			@db['pokemon'].size.should eql 1
-			@db['pokemon'].find_one['number'].should_not be_nil
+			Pokemon.count.should eql 1
+			Pokemon.first['number'].should_not be_nil
 		end
 
 		it "adds pokemon with a name" do
 			@populater.add_pokemon 1
-			@db['pokemon'].size.should eql 1
-			@db['pokemon'].find_one['name'].should_not be_nil
+			Pokemon.count.should eql 1
+			Pokemon.first['name'].should_not be_nil
 		end
 
 		it "adds pokemon with array of types" do
 			@populater.add_pokemon 1
-			@db['pokemon'].size.should eql 1
-			types = @db['pokemon'].find_one['types']
+			Pokemon.count.should eql 1
+			types = Pokemon.first['types']
 			types.should_not be_nil
 			types.should be_an_instance_of Array
 			types.should have_at_least(1).items
@@ -109,8 +109,8 @@ describe Populater do
 
 		it "adds pokemon with image link" do
 			@populater.add_pokemon 1
-			@db['pokemon'].size.should eql 1
-			image = @db['pokemon'].find_one['image']
+			Pokemon.count.should eql 1
+			image = Pokemon.first['image']
 			image.should_not be_nil
 			image.should_not be_empty
 		end

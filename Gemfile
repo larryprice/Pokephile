@@ -1,7 +1,5 @@
 source :rubygems
 
 gem 'sinatra'
-gem 'cucumber'
-gem 'capybara'
-gem 'rspec'
-require 'haml'
+gem 'haml'
+gem 'mongoid'
