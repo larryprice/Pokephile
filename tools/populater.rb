@@ -27,7 +27,7 @@ class Populater
       unless dex_num == "000"
         type_1 = row.at_xpath('td[4]/a/span/text()').to_s.strip
         type_2 = row.at_xpath('td[5]/a/span/text()').to_s.strip || row.at_xpath('td[5]/text()').to_s.strip
-        image_link = "http://bulbapedia.bulbagarden.net/wiki/File:#{dex_num}#{dex_name}.png"
+        image_link = "http://img.pokemondb.net/artwork/#{dex_name}.jpg"
       else
         type_1 = row.at_xpath('td[4]/text()').to_s.strip
         type_2 = row.at_xpath('td[5]/text()').to_s.strip

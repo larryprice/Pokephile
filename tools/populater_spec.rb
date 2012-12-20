@@ -1,4 +1,4 @@
-require './populater'
+require_relative 'populater'
 require '../models/pokemon'
 require 'mongoid'
 
@@ -30,7 +30,7 @@ describe Populater do
 			expect {@populater.format_string nil}.to raise_error
 		end
 
-		it "raises erovide a familiar API to Ruby developers who have been using Active Record or Data Mapper, while leveraging the power of MongoDB's schemaless and performant document-based design, dynamic queries, and atomicror for non integer types" do
+		it "raises error if param is not integer" do
 			expect {@populater.format_string "500"}.to raise_error
 		end
 

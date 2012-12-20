@@ -5,8 +5,18 @@
 	text-align: right;
 	margin-right: 5px;
 	margin-top: 5px;
+	color: whitesmoke;
+	font-weight: bold;
 }
 
 body {
 	font-family: 'Exo', sans-serif;
+}
+
+html { 
+	background: url(../images/pokeball-bg.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
