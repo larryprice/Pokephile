@@ -1,6 +1,6 @@
 #! /usr/bin/ruby
 
-require './populater'
+require_relative 'populater'
 require 'mongoid'
 
 num_pokemon = 151

@@ -4,7 +4,7 @@ require 'mongoid'
 
 class Pokedex < Sinatra::Base
 	configure do
-	  Mongoid.load! './mongoid.yml'
+	  Mongoid.load! 'mongoid.yml'
 	end
 
 	get '/' do

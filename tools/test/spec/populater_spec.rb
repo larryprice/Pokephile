@@ -1,10 +1,10 @@
-require_relative 'populater'
-require '../models/pokemon'
+require_relative '../../populate/populater'
+require_relative '../../../models/pokemon'
 require 'mongoid'
 
 describe Populater do
 	before:all do
-		Mongoid.load! '../mongoid.yml', :test
+		Mongoid.load! '../../../mongoid.yml', :test
 	end
 
 	before:each do

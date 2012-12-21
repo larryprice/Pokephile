@@ -1,8 +1,8 @@
 #! /usr/bin/ruby
 
+require_relative '../../models/pokemon'
 require 'nokogiri'
 require 'open-uri'
-require '../models/pokemon'
 
 class Populater
 	def initialize()
