@@ -1,4 +1,6 @@
-%h1 
-	Some image.
-%p
-	It's *insert pokemon name here*
+%script{:type => "text/javascript", :src  => "js/jquery.js"}
+%script{:type => "text/javascript", :src  => "js/bootstrap-typeahead.js"}
+#search
+	Start typing to begin searching for your Pokemon.
+	#search-box
+		%input{:type=>"text", :class => "span3", "data-provide"=>"typeahead", "data-items"=>"4", "autocomplete"=>"off", "data-source" => ["apple", "banana", "cedar"]}

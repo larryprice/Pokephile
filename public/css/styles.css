@@ -9,12 +9,17 @@
 	font-weight: bold;
 }
 
+#search-box {
+	min-height: 20px;
+	padding: 19px;
+}
+
 body {
 	font-family: 'Exo', sans-serif;
 }
 
 html { 
-	background: url(../images/pokeball-bg.png) no-repeat center center fixed; 
+	background: url(../images/pokeball-bg.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
