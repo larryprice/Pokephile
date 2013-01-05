@@ -9,6 +9,31 @@
 	font-weight: bold;
 }
 
+#search {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 20%;
+	font-size: 20px;
+	font-weight: bold;
+	min-height: 50px;
+}
+
+#search-bottom {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	bottom: 0%;
+	font-size: 18px;
+	font-weight: bold;
+	min-height: 50px;
+}
+
+#search-box-bottom {
+	min-height: 20px;
+	padding: 5px;
+}
+
 #search-box {
 	min-height: 20px;
 	padding: 19px;

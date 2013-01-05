@@ -4,7 +4,7 @@ require_relative 'populater'
 require 'mongoid'
 
 num_pokemon = 151
-env = :development
+env = 'development'
 
 ARGV.each do |arg|
 	arg_split = arg.split '='
@@ -14,7 +14,7 @@ ARGV.each do |arg|
 		if arg_split[1] == 'development' || arg_split[1] == 'test'
 			env = arg_split[1]
 		elsif arg_split[1] == 'production'
-			if ENV['MONGOLAB_URI'].empty?
+			if ENV['MONGOLAB_URI'].nil? || ENV['MONGOLAB_URI'].empty?
 				raise "MONGOLAB_URI not defined"
 			end
 			env = arg_split[1]
@@ -27,3 +27,5 @@ Mongoid.load! '../mongoid.yml', env
 puts "Adding first #{num_pokemon} Pokemon to #{env} database..."
 
 Populater.new.add_pokemon num_pokemon
+
+puts "Done!"

@@ -1,6 +1,6 @@
 #! /usr/bin/ruby
 
-require_relative '../../models/pokemon'
+require_relative '../../pokemon'
 require 'nokogiri'
 require 'open-uri'
 

@@ -1,5 +1,5 @@
 require_relative '../../populate/populater'
-require_relative '../../../models/pokemon'
+require_relative '../../../pokemon'
 require 'mongoid'
 
 describe Populater do
@@ -17,6 +17,9 @@ describe Populater do
 		end
 
 		it "empties pokemon collection" do
+			Pokemon.create!
+			Pokemon.count.should eql 1
+			Populater.new
 			Pokemon.count.should eql 0
 		end
 	end
