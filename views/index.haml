@@ -1,8 +1,10 @@
 %script{:type => "text/javascript", :src  => "js/jquery.js"}
 %script{:type => "text/javascript", :src  => "js/bootstrap-typeahead.js"}
+#gir-image
+	%img{:src => "images/girkachu.png"}
 #search
 	Start typing to search for your Pokemon.
 	#search-box
 		%form{:action => "search", :method => "POST", :id => "pokemon-search"}
-			%input{:type => "text", :id => "pokemon-input", :class => "span3", "data-provide"=>"typeahead", "data-items"=>"10", "autocomplete"=>"off", :autofocus => "", :placeholder => "Find a Pokemon...", "data-source" => Pokemon.only(:name).map {|x| x.name}}
+			%input{:type => "text", :id => "pokemon-input", :name => "pokemon", :class => "span3", "data-provide"=>"typeahead", "data-items"=>"10", "autocomplete"=>"off", :autofocus => "", :placeholder => "Find a Pokemon...", "data-source" => Pokemon.only(:name).map {|x| x.name}}
 			%input{:type=>"submit", :class => "btn btn-small", :style => "margin-bottom: 10px; font-weight: bold;", :value => "Search"}

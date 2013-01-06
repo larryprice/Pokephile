@@ -5,38 +5,42 @@
 	text-align: right;
 	margin-right: 5px;
 	margin-top: 5px;
-	color: whitesmoke;
+	color: black;
+	font-size: 18px;
 	font-weight: bold;
 }
 
 #search {
 	position: absolute;
+	width: 47%;
 	text-align: center;
-	width: 100%;
-	top: 20%;
-	font-size: 20px;
+	top: 40%;
+	font-size: 28px;
+	line-height: 30px;
 	font-weight: bold;
 	min-height: 50px;
-}
-
-#search-bottom {
-	position: absolute;
-	text-align: center;
-	width: 100%;
-	bottom: 0%;
-	font-size: 18px;
-	font-weight: bold;
-	min-height: 50px;
-}
-
-#search-box-bottom {
-	min-height: 20px;
-	padding: 5px;
 }
 
 #search-box {
 	min-height: 20px;
 	padding: 19px;
+}
+
+#pokemon-info {
+	position: absolute;
+	text-align: center;
+	left: 65%;
+	top: 22%;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+#gir-image {
+	position: absolute;
+	text-align: center;
+	left: 65%;
+	top: 15%;
 }
 
 body {

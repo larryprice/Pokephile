@@ -13,6 +13,7 @@ class Pokedex < Sinatra::Base
 	end
 
 	post '/search' do
+		@pokemon = Pokemon.where(name: params[:pokemon]).first
 		haml :info
 	end
 end

@@ -10,12 +10,14 @@ Given /^I am on the search page having typed "(.*?)"$/ do |arg1|
   fill_in("pokemon-input", :with => arg1)
   click_button "Search"
 end
+
 When /^I fill in "(.*?)" with "(.*?)"$/ do |arg1, arg2|
 	fill_in(arg1, :with => arg2)
 end
 When /^I click the "(.*?)" button$/ do |arg1|
   click_button arg1
 end
+
 Then /^I should see "([^"]*)" in the selector "([^"]*)"$/ do |text, selector|
   page.should have_selector selector, text: text
 end
@@ -27,4 +29,7 @@ Then /^I should see an input with a "([^"]*)" dataprovide$/ do |provide|
 end
 Then /^I should be on the "(.*?)" page$/ do |arg1|
   current_path.should == "/#{arg1}"
+end
+Then /^I should see an image with source "(.*?)"$/ do |src|
+  find(:xpath, "//image[@src='#{src}']").should_not be_nil
 end
