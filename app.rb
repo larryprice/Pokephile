@@ -5,7 +5,7 @@ require_relative 'pokemon'
 
 class Pokedex < Sinatra::Base
 	configure do
-	  Mongoid.load! 'mongoid.yml'
+	  Mongoid.load! 'mongoid.yml', :production
 	end
 
 	get '/' do
