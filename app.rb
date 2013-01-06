@@ -5,7 +5,8 @@ require_relative 'pokemon'
 
 class Pokedex < Sinatra::Base
 	configure do
-	  Mongoid.load! 'mongoid.yml', :production
+	  Mongoid.load! 'mongoid.yml'
+	  puts "Count of Pokemon: #{Pokemon.count}"
 	end
 
 	get '/' do
