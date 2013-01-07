@@ -26,6 +26,6 @@ Mongoid.load! '../mongoid.yml', env
 
 puts "Adding first #{num_pokemon} Pokemon to #{env} database..."
 
-Populater.new.add_pokemon num_pokemon
+Populater.new.populate num_pokemon
 
 puts "Done!"

@@ -22,6 +22,7 @@
 }
 
 #search-box {
+	font-size: 22px;
 	min-height: 20px;
 	padding: 19px;
 }
@@ -30,7 +31,7 @@
 	position: absolute;
 	text-align: center;
 	left: 65%;
-	top: 22%;
+	top: 15%;
 	font-weight: bold;
 	font-size: 24px;
 	line-height: 30px;
@@ -39,8 +40,10 @@
 #gir-image {
 	position: absolute;
 	text-align: center;
-	left: 65%;
+	left: 62%;
 	top: 15%;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 body {
