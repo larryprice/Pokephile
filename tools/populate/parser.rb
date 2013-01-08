@@ -30,6 +30,14 @@ class Parser
 	      image_link = "images/missingno.png"
 	    end
 
+	    if dex_num == "083"
+	    	image_link = "http://img.pokemondb.net/artwork/farfetchd.jpg"
+	    elsif dex_num == "029"
+	    	image_link = "http://img.pokemondb.net/artwork/nidoran-f.jpg"
+	    elsif dex_num == "032"
+	    	image_link = "http://img.pokemondb.net/artwork/nidoran-m.jpg"
+	    end
+
 	    types = Array.new
 	    types << type_1 unless type_1.nil? || type_1.empty?
 	    types << type_2 unless type_2.nil? || type_2.empty?

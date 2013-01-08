@@ -50,5 +50,17 @@ describe Parser do
 			mew.types.count.should eql 1
 			mew.types.should include("Psychic")
 		end
+		it "special image link for farfetchd" do
+			farfetchd = @parser.parse(84).last
+			farfetchd.image.should eql "http://img.pokemondb.net/artwork/farfetchd.jpg"
+		end
+		it "special image link for nidoran-f" do
+			nidoranf = @parser.parse(30).last
+			nidoranf.image.should eql "http://img.pokemondb.net/artwork/nidoran-f.jpg"
+		end
+		it "special image link for nidoran-m" do
+			nidoranm = @parser.parse(33).last
+			nidoranm.image.should eql "http://img.pokemondb.net/artwork/nidoran-m.jpg"
+		end
 	end
 end

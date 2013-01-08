@@ -31,5 +31,5 @@ Then /^I should be on the "(.*?)" page$/ do |arg1|
   current_path.should == "/#{arg1}"
 end
 Then /^I should see an image with source "(.*?)"$/ do |src|
-  find(:xpath, "//image[@src='#{src}']").should_not be_nil
+  find(:xpath, "//img[@src='#{src}']").should_not be_nil
 end

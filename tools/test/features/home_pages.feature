@@ -5,7 +5,7 @@ Feature: Viewer visits the Home Page
 
 Scenario: Find about block on the home page
 	Given I am on the home page
-	Then I should see "Copyright (C) Larry Price 2012" within a div tag with id "about-body"
+	Then I should see "Copyright &copy Larry Price 2012" within a div tag with id "about-body"
 
 Scenario: Find search text on the home page
   Given I am on the home page
