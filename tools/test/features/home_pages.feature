@@ -13,8 +13,15 @@ Scenario: Find search text on the home page
 Scenario: Find typeahead on the home page
   Given I am on the home page
   Then I should see an input with a "typeahead" dataprovide
-Scenario: Type data into typeahead input
+Scenario: Type data into typeahead input on the home page
 	Given I am on the home page
 	When I fill in "pokemon-input" with "Bulbasaur"
 	And I click the "Search" button
 	Then I should be on the "search" page
+  And I should see an image with source "http://img.pokemondb.net/artwork/bulbasaur.jpg"
+Scenario: Type garbage data into typeahead input on the home page
+  Given I am on the home page
+  When I fill in "pokemon-input" with "JohnTravolta"
+  And I click the "Search" button
+  Then I should be on the "search" page
+  And I should see an image with source "images/girkachu.png"

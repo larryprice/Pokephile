@@ -18,7 +18,17 @@ Scenario: Type data into typeahead input
 	When I fill in "pokemon-input" with "Bulbasaur"
 	And I click the "Search" button
 	Then I should be on the "search" page
+	And I should see an image with source "http://img.pokemondb.net/artwork/bulbasaur.jpg"
+Scenario: Type garbage data into typeahead input on the search page
+  Given I am on the search page
+  When I fill in "pokemon-input" with "JohnTravolta"
+  And I click the "Search" button
+  Then I should be on the "search" page
+  And I should see an image with source "images/girkachu.png"
 
 Scenario: See Pokemon image on the search page
 	Given I am on the search page having typed "Bulbasaur"
 	Then I should see an image with source "http://img.pokemondb.net/artwork/bulbasaur.jpg"
+Scenario: See garbage image on the search page
+	Given I am on the search page having typed "JohnTravolta"
+	Then I should see an image with source "images/girkachu.png"
