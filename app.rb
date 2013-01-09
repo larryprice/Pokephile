@@ -2,6 +2,7 @@ require 'sinatra'
 require 'haml'
 require 'mongoid'
 require_relative 'pokemon'
+require_relative 'matcher'
 
 class Pokedex < Sinatra::Base
 	configure do
@@ -16,8 +17,8 @@ class Pokedex < Sinatra::Base
 	post '/search' do
 		@pokemon = Pokemon.where(name_lower: params[:pokemon].downcase).first
 		if @pokemon.nil?
-			@input = params[:pokemon]
-			@suggestion = Pokemon.all.sort_by{rand}.first.name
+			@bad_input = params[:pokemon]
+			@suggestion = Matcher.closest_match(@bad_input, settings.pokemon_names)
 		end
 		haml :info
 	end

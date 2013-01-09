@@ -11,10 +11,10 @@
 	#gir-image
 		%img{:src => "images/girkachu.png"}
 		%br
-		= "I don't recognize the Pokemon '#{@input}.'"
+		= "I don't recognize the Pokemon '#{@bad_input}.'"
 		- unless Pokemon.count == 0
 			%br
-			= "How about '#{@suggestion}?'"
+			= "Did you mean '#{@suggestion}?'"
 #search
 	Search for another Pokemon.
 	#search-box
