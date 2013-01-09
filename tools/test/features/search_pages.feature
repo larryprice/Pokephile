@@ -5,7 +5,7 @@ Feature: Viewer searches for a Pokemon
 
 Scenario: Find about block on the search page
 	Given I am on the search page
-	Then I should see "Copyright &copy Larry Price 2012" within a div tag with id "about-body"
+	Then I should see "Copyright &copy Larry Price 2013" within a div tag with id "about-body"
 
 Scenario: Find search text on the search page
   Given I am on the search page
@@ -25,6 +25,8 @@ Scenario: Type garbage data into typeahead input on the search page
   And I click the "Search" button
   Then I should be on the "search" page
   And I should see an image with source "images/girkachu.png"
+  And I should see "I don't recognize the Pokemon 'JohnTravolta.'" within a div tag with id "gir-image"
+  And I should see "How about " within a div tag with id "gir-image"
 
 Scenario: See Pokemon image on the search page
 	Given I am on the search page having typed "Bulbasaur"
@@ -32,3 +34,5 @@ Scenario: See Pokemon image on the search page
 Scenario: See garbage image on the search page
 	Given I am on the search page having typed "JohnTravolta"
 	Then I should see an image with source "images/girkachu.png"
+  And I should see "I don't recognize the Pokemon 'JohnTravolta.'" within a div tag with id "gir-image"
+  And I should see "How about " within a div tag with id "gir-image"

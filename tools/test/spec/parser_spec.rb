@@ -32,6 +32,7 @@ describe Parser do
 		it "returns pokemon number 16 with correct data" do
 			pidgey = @parser.parse(20).select {|x| x.number.to_i == 16}.first
 			pidgey.name.should eql "Pidgey"
+			pidgey.name_lower.should eql "pidgey"
 			pidgey.image.should eql "http://img.pokemondb.net/artwork/pidgey.jpg"
 			pidgey.types.should include("Normal")
 			pidgey.types.should include("Flying")
@@ -39,6 +40,7 @@ describe Parser do
 		it "returns pokemon number 0 with correct data" do
 			missingno = @parser.parse(8).select {|x| x.number.to_i == 0}.first
 			missingno.name.should eql "Missingno"
+			missingno.name_lower.should eql "missingno"
 			missingno.image.should eql "images/missingno.png"
 			missingno.types.should include("Normal")
 			missingno.types.should include("Bird")
@@ -46,6 +48,7 @@ describe Parser do
 		it "returns pokemon number 151 with correct data" do
 			mew = @parser.parse(152).last
 			mew.name.should eql "Mew"
+			mew.name_lower.should eql "mew"
 			mew.image.should eql "http://img.pokemondb.net/artwork/mew.jpg"
 			mew.types.count.should eql 1
 			mew.types.should include("Psychic")

@@ -5,7 +5,7 @@ Feature: Viewer visits the Home Page
 
 Scenario: Find about block on the home page
 	Given I am on the home page
-	Then I should see "Copyright &copy Larry Price 2012" within a div tag with id "about-body"
+	Then I should see "Copyright &copy Larry Price 2013" within a div tag with id "about-body"
 
 Scenario: Find search text on the home page
   Given I am on the home page
@@ -25,3 +25,5 @@ Scenario: Type garbage data into typeahead input on the home page
   And I click the "Search" button
   Then I should be on the "search" page
   And I should see an image with source "images/girkachu.png"
+  And I should see "I don't recognize the Pokemon 'JohnTravolta.'" within a div tag with id "gir-image"
+  And I should see "How about " within a div tag with id "gir-image"

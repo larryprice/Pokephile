@@ -39,35 +39,5 @@ describe Populater do
 			@populater.populate 2
 			Pokemon.count.should eql 2
 		end
-
-		it "adds pokemon with a number" do
-			@populater.populate 1
-			Pokemon.count.should eql 1
-			Pokemon.first['number'].should_not be_nil
-		end
-
-		it "adds pokemon with a name" do
-			@populater.populate 1
-			Pokemon.count.should eql 1
-			Pokemon.first['name'].should_not be_nil
-		end
-
-		it "adds pokemon with array of types" do
-			@populater.populate 1
-			Pokemon.count.should eql 1
-			types = Pokemon.first['types']
-			types.should_not be_nil
-			types.should be_an_instance_of Array
-			types.should have_at_least(1).items
-			types.should have_at_most(2).items
-		end
-
-		it "adds pokemon with image link" do
-			@populater.populate 1
-			Pokemon.count.should eql 1
-			image = Pokemon.first['image']
-			image.should_not be_nil
-			image.should_not be_empty
-		end
 	end
 end

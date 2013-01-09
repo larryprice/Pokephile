@@ -1,7 +1,15 @@
-require_relative "../../../../app"
+require 'capybara'
+require 'capybara/cucumber'
+require 'rspec'
+require 'mongoid'
 
-require "capybara"
-require "capybara/cucumber"
-require "rspec"
+require_relative '../../../populate/populater'
+
+ENV['MONGOID_ENV'] = 'test'
+
+Mongoid.load! '../../mongoid.yml'
+Populater.new.populate 10
+
+require_relative "../../../../app"
 
 Capybara.app = Pokedex

@@ -42,7 +42,7 @@ class Parser
 	    types << type_1 unless type_1.nil? || type_1.empty?
 	    types << type_2 unless type_2.nil? || type_2.empty?
 
-	    @pokemon << Pokemon.new(:number => dex_num, :name => dex_name, :types => types, :image => image_link)
+	    @pokemon << Pokemon.new(:number => dex_num, :name => dex_name, :name_lower => dex_name.downcase, :types => types, :image => image_link)
 
       max -= 1
   	end
