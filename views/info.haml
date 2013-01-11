@@ -6,7 +6,7 @@
 		%br
 		= "Number: #{@pokemon.number}"
 		%br
-		= "Types: #{@pokemon.types}"
+		= "Types: #{@pokemon.types.first}#{@pokemon.types.count < 2 ? ' ' : ', ' + @pokemon.types.last}"
 - else
 	#gir-image
 		%img{:src => "images/girkachu.png"}

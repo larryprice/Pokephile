@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'haml'
 require 'mongoid'
-require_relative 'pokemon'
+require_relative 'models/pokemon'
 require_relative 'matcher'
 
 class Pokedex < Sinatra::Base

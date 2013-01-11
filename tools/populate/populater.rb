@@ -1,6 +1,6 @@
 #! /usr/bin/ruby
 
-require_relative '../../pokemon'
+require_relative '../../models/pokemon'
 require_relative 'parser'
 
 class Populater

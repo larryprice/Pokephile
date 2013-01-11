@@ -1,4 +1,4 @@
-require_relative '../../../pokemon'
+require_relative '../../../models/pokemon'
 require_relative '../../populate/parser'
 
 describe Parser do

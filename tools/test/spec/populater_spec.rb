@@ -1,5 +1,5 @@
 require_relative '../../populate/populater'
-require_relative '../../../pokemon'
+require_relative '../../../models/pokemon'
 require 'mongoid'
 
 describe Populater do

@@ -40,10 +40,19 @@
 #gir-image {
 	position: absolute;
 	text-align: center;
-	left: 62%;
-	top: 15%;
+	right: 25%;
+	margin-right: -200px;
+	top: 50%;
+	margin-top: -250px;
 	font-size: 20px;
 	font-weight: bold;
+}
+
+#logo {
+	position: absolute;
+	bottom: 1%;
+	left: 50%;
+	margin-left: -100px;
 }
 
 body {

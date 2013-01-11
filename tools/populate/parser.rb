@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
-require_relative '../../pokemon'
+require_relative '../../models/pokemon'
 
 class Parser
 	def initialize
