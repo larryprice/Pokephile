@@ -58,8 +58,11 @@ class Pokedex < Sinatra::Base
 	def get_resistants(types)
 		resistants = Array.new
 		types.each do |t|
-			Type.where(name: t).first.resistant.each do |s|
-				resistants << s
+			type = Type.where(name: t).first
+			unless type.nil?
+				type.resistant.each do |s|
+					resistants << s
+				end
 			end
 		end
 		resistants
@@ -68,8 +71,11 @@ class Pokedex < Sinatra::Base
 	def get_weaks(types)
 		weaks = Array.new
 		types.each do |t|
-			Type.where(name: t).first.weak.each do |s|
-				weaks << s
+			type = Type.where(name: t).first
+			unless type.nil?
+				type.weak.each do |s|
+					weaks << s
+				end
 			end
 		end
 		weaks
@@ -78,8 +84,11 @@ class Pokedex < Sinatra::Base
 	def get_immunes(types)
 		immunes = Array.new
 		types.each do |t|
-			Type.where(name: t).first.immune.each do |i|
-				immunes << i
+			type = Type.where(name: t).first
+			unless type.nil?
+				type.immune.each do |i|
+					immunes << i
+				end
 			end
 		end
 		immunes
