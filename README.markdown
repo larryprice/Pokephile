@@ -2,12 +2,12 @@
 Author: Larry Price  
 Contact: larry.price.dev@gmail.com  
 Repository: https://github.com/larryprice/Pokephile  
-Address: http://pokephile.herokuapps.com
+Address: http://pokephile.herokuapp.com
 
 #Description#
-A Pokémon database for viewing some basic information of the given monster. The web application is hosted at [pokephile.herokuapps.com][pokephile-heroku]. A [series of technical blog posts][pokephile] accompanies this web application.
+A Pokémon database for viewing some basic information of the given monster. The web application is hosted at [pokephile.herokuapp.com][pokephile-heroku]. A [series of technical blog posts][pokephile] accompanies this web application.
 
-[pokephile-heroku]: http://pokephile.herokuapps.com
+[pokephile-heroku]: http://pokephile.herokuapp.com
 
 #Credit#
 [Pokéball Background][bg] from [Shake the Glitter][stg].
