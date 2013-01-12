@@ -36,15 +36,24 @@ class Parser
 	    	image_link = "http://img.pokemondb.net/artwork/nidoran-f.jpg"
 	    elsif dex_num == "032"
 	    	image_link = "http://img.pokemondb.net/artwork/nidoran-m.jpg"
+	    elsif dex_num == "479"
+	    	image_link = "http://img.pokemondb.net/artwork/rotom-normal.jpg"
+	    elsif dex_num == "492"
+	    	image_link = "http://img.pokemondb.net/artwork/shaymin-sky.jpg"
 	    end
 
 	    types = Array.new
 	    types << type_1 unless type_1.nil? || type_1.empty?
 	    types << type_2 unless type_2.nil? || type_2.empty?
 
-	    @pokemon << Pokemon.new(:number => dex_num, :name => dex_name, :name_lower => dex_name.downcase, :types => types, :image => image_link)
-
-      max -= 1
+	    if @pokemon.select {|p| p.number == dex_num}.first.nil?
+		    @pokemon << Pokemon.new(:number => dex_num,
+		    	                      :name => dex_name, 
+		    	                      :name_lower => dex_name.downcase, 
+		    	                      :types => types, 
+		    	                      :image => image_link)
+	      max -= 1
+	    end
   	end
 
   	return @pokemon

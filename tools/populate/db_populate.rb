@@ -1,9 +1,10 @@
 #! /usr/bin/ruby
 
 require_relative 'populater'
+require_relative 'type_builder'
 require 'mongoid'
 
-num_pokemon = 151
+num_pokemon = 1000
 env = 'development'
 
 ARGV.each do |arg|
@@ -28,4 +29,14 @@ puts "Adding first #{num_pokemon} Pokemon to #{env} database..."
 
 Populater.new.populate num_pokemon
 
-puts "Done!"
+puts "Added #{Pokemon.count} Pokemon to database!"
+
+if Type.count > 0
+	puts "Deleting type collection..."
+	Type.delete_all
+end
+puts "Adding types to database..."
+
+TypeBuilder.new.populate
+
+puts "Added #{Type.count} types to database!"
