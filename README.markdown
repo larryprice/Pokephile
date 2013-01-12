@@ -10,9 +10,9 @@ A Pokémon database for viewing some basic information of the given monster. The
 [pokephile-heroku]: http://pokephile.herokuapp.com
 
 #Credit#
-[Pokéball Background][bg] from [Shake the Glitter][stg].
-Pokémon information from [The Pokémon Wiki][pokewiki].
-Pokémon images from [The Pokémon Database][pokedb].
+* [Pokéball Background][bg] from [Shake the Glitter][stg].
+* Pokémon information from [The Pokémon Wiki][pokewiki].
+* Pokémon images from [The Pokémon Database][pokedb].
 
 [bg]: http://www.shaketheglitter.com/content/desktop-backgrounds
 [stg]: http://www.shaketheglitter.com/
@@ -21,19 +21,19 @@ Pokémon images from [The Pokémon Database][pokedb].
 
 #Tech#
 This application was made while writing a [series of technical blog posts][pokephile] to integrate the following technologies:
-*[Ruby 1.9.3][ruby] for writing code.
-*[Mongoid][mongoid] for manipulating documents in a schemaless database.
-*[Amatch][amatch] for matching approximate matches.
-*[Nokogiri][nokogiri] for data scraping.
-*[RSpec][rspec] for testing the Ruby code.
-*[Capybara][capybara] for testing the UI code.
-*[Sinatra][sinatra] for creating a web server.
-*[Haml][haml}] for making HTML easier to write.
-*[Heroku][heroku] for web hosting.
-*[MongoLab][mongolab] for a Mongo database on the web.
-*[The Twitter Bootstrap][boots] for simplifying the CSS details.
-*[Google Web Fonts for the Exo font][webf].
-*[Dafont for supplying a Pokémon font][dafont].
+* [Ruby 1.9.3][ruby] for writing code.
+* [Mongoid][mongoid] for manipulating documents in a schemaless database.
+* [Amatch][amatch] for matching approximate matches.
+* [Nokogiri][nokogiri] for data scraping.
+* [RSpec][rspec] for testing the Ruby code.
+* [Capybara][capybara] for testing the UI code.
+* [Sinatra][sinatra] for creating a web server.
+* [Haml][haml] for making HTML easier to write.
+* [Heroku][heroku] for web hosting.
+* [MongoLab][mongolab] for a Mongo database on the web.
+* [The Twitter Bootstrap][boots] for simplifying the CSS details.
+* [Google Web Fonts for the Exo font][webf].
+* [Dafont for supplying a Pokémon font][dafont].
 
 [pokephile]: http://larryprice.github.com/blog/categories/pokephile/
 [ruby]: http://www.ruby-lang.org/en/
