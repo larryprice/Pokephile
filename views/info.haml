@@ -2,22 +2,32 @@
 	#pokemon-info
 		%img{:src => @pokemon.image, :height => "250px"}
 		%br
-		= "Name: #{@pokemon.name}"
+		= "##{@pokemon.number} - #{@pokemon.name}"
 		%br
-		= "Number: #{@pokemon.number}"
-		%br
-		= "Types: #{@pokemon.types.first}#{@pokemon.types.count < 2 ? ' ' : ', ' + @pokemon.types.last}"
+		#pokemon-details
+			= "Types: #{@pokemon.types.first}#{@pokemon.types.count < 2 ? ' ' : ', ' + @pokemon.types.last}"
+			- unless @immunes.count == 0
+				%br
+				= "Immune Against: #{stringify_types_list(@immunes)}"
+			- unless @resistants.count == 0
+				%br
+				= "Good Defensively Against: #{stringify_types_list(@resistants)}"
+			- unless @weaks.count == 0
+				%br
+				= "Poor Defensively Against: #{stringify_types_list(@weaks)}"
 - else
 	#gir-image
 		%img{:src => "images/girkachu.png"}
 		%br
-		= "I don't recognize the Pokemon '#{@bad_input}.'"
+		= "I don't recognize the Pokémon '#{@bad_input}.'"
 		- unless Pokemon.count == 0
 			%br
 			= "Did you mean '#{@suggestion}?'"
 #search
-	Search for another Pokemon.
+	Search for another Pokémon.
 	#search-box
 		%form{:action => "search", :method => "POST", :id => "pokemon-search"}
-			%input{:type => "text", :id => "pokemon-input", :name => "pokemon", :class => "span3", "data-provide"=>"typeahead", "data-items"=>"10", "autocomplete"=>"off", :autofocus => "", :placeholder => "Find a Pokemon...", "data-source" => settings.pokemon_names}
-			%input{:type=>"submit", :class => "btn btn-small", :style => "margin-bottom: 10px; font-weight: bold;", :value => "Search"}
+			%input{:type => "text", :class => "input-large", :id => "pokemon-input", :name => "pokemon", "data-provide"=>"typeahead", "data-items"=>"10", "autocomplete"=>"off", :autofocus => "", :placeholder => "Find a Pokémon...", "data-source" => settings.pokemon_names}
+			%button{:type=>"submit", :class => "btn btn-small", :style => "margin-bottom: 10px; font-weight: bold;"}
+				%i{:class => "icon-search"}
+				Search

@@ -30,11 +30,16 @@
 #pokemon-info {
 	position: absolute;
 	text-align: center;
-	left: 65%;
+	left: 60%;
 	top: 15%;
 	font-weight: bold;
 	font-size: 24px;
 	line-height: 30px;
+}
+
+#pokemon-details {
+	font-size: 14px;
+	line-height: 20px;
 }
 
 #gir-image {
@@ -53,6 +58,15 @@
 	bottom: 1%;
 	left: 50%;
 	margin-left: -100px;
+}
+
+#about-body {
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-align: right;
+	margin-right: 5px;
+	margin-top: 5px;
 }
 
 body {

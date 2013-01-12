@@ -96,7 +96,7 @@ class TypeBuilder
 	def build_ground
 		Type.new(:name => "Ground",
 			:not_very => ["Grass", "Bug"],
-			:super => ["Fire", "Electric", "Fighting", "Rock", "Steel"],
+			:super => ["Fire", "Electric", "Rock", "Steel", "Poison"],
 			:no_effect => ["Flying"])
 	end
 

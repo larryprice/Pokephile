@@ -213,7 +213,7 @@ describe TypeBuilder do
 			ground.name.should eql "Ground"
 
 			ground.super.count.should eql 5
-			ground.super.should include("Fire", "Electric", "Fighting", "Rock", "Steel")
+			ground.super.should include("Fire", "Electric", "Rock", "Steel", "Poison")
 		end
 
 		it "creates ground document with correct no effect" do

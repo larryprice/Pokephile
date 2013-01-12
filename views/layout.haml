@@ -19,8 +19,73 @@
 	%body
 		%script{:type => "text/javascript", :src  => "http://code.jquery.com/jquery-1.8.3.min.js"}
 		%script{:type => "text/javascript", :src  => "http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"}
+		%script{:type => "text/javascript", :src  => "http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"}
 		#about-body
 			Copyright &copy <a href="http://larryprice.github.com" title="My blog" alt="Link to Blog" target="_blank">Larry Price</a> 2013
+		.help-dialog{:id => "help-dialog", :class => "modal hide fade in", :style => "display: none;"}
+			.help-header{:class => "modal-header", :style => "font-size: 30px; font-weight: bold;"}
+				%a{:class => "close", "data-dismiss" => "modal"}
+					%i{:class => "icon-remove"}
+				Poképhile
+			.help-body{:class => "modal-body"}
+				.span6
+					%legend
+						Overview
+					%p
+						Poképhile ('Poké'=Pocket Monsters, 'phile'=one who has an affinity) is a simple web application for searching Pokémon and viewing some basic information about that Pokémon.
+					%legend
+						How-To
+					%p
+						Just type in the search box on the left! While typing, the search box will try to make suggestions. Just hit enter or press the 'Search' button to find your Pokémon.
+					%legend
+						Tech
+					%p
+						This application was made while writing a <a href="http://larryprice.github.com/blog/categories/pokephile/" target="_blank">series of technical blog posts</a> to integrate the following technologies:
+						%ul
+							%li
+								<a href="http://www.ruby-lang.org/en/" target="_blank">Ruby 1.9.3</a> for writing code.
+							%li
+								<a href="http://mongoid.org/en/mongoid/index.html" target="_blank">Mongoid</a> for manipulating documents in a schemaless database.
+							%li
+								<a href="http://flori.github.com/amatch/" target="_blank">Amatch</a> for matching approximate matches.
+							%li
+								<a href="http://nokogiri.org" target="_blank">Nokogiri</a> for data scraping.
+							%li
+								<a href="http://rspec.info" target="_blank">RSpec</a> for testing the Ruby code.
+							%li
+								<a href="http://rubygems.org/gems/capybara" target="_blank">Capybara</a> for testing the UI code.
+							%li
+								<a href="http://www.sinatrarb.com/" target="_blank">Sinatra</a> for creating a web server.
+							%li
+								<a href="http://haml.info" target="_blank">Haml</a> for making HTML easier to write.
+							%li
+								<a href="http://www.heroku.com/" target="_blank">Heroku</a> for web hosting.
+							%li
+								<a href="https://www.mongolab.com/home" target="_blank">MongoLab</a> for a Mongo database on the web.
+							%li
+								<a href="http://twitter.github.com/bootstrap/" target="_blank">The Twitter Bootstrap</a> for simplifying the CSS details, the search typeahead, and this modal dialog.
+							%li
+								<a href="http://www.google.com/webfonts" target="_blank">Google Web Fonts</a> for the <a href="http://www.google.com/webfonts/specimen/Exo" target="_blank">Exo font</a>.
+							%li
+								<a href="http://www.dafont.com/pokemon.font" target="_blank">Dafont</a> for supplying a Pokémon font.
+					%legend
+						Data Origin
+					%p
+						%li
+							<a href="http://www.shaketheglitter.com/content/desktop-backgrounds" target="_blank">Shake the Glitter</a> for the <a href="images/pokeball-bg.png" target="_blank">background image</a>.
+						%li
+							<a href="http://pokemon.wikia.com/wiki/List_of_Pok%C3%A9mon" target="_blank">The Pokémon Wiki</a> for the Pokémon details.
+						%li
+							<a href="http://img.pokemondb.net" target="_blank">PokémonDB</a> for the Pokémon images.
+					%legend
+						About
+					%p
+						Copyright (C) 2013 Larry Price. Follow me on <a href="http://larryprice.github.com" target="_blank"  title="Visit my blog" alt="Link to GitHub Blog"/>my blog</a>. See <a href="http://github.com/" target="_blank" alt="Link to GitHub" title="Visit GitHub">Github</a> for the <a href="https://github.com/larryprice/Pokephile" target="_blank"  alt="Link to Poképhile repository" title="Visit the Poképhile repository">Poképhile repository</a>. Send any questions or report issues by email to <a href="mailto:larry.price.dev@gmail.com">larry.price.dev@gmail.com</a>.
+			.help-footer{:class => "modal-footer"}
+				%a{:class => "btn btn-primary", "data-dismiss" => "modal"}
+					Close
 		#logo
-			%img{:src => "images/pokephile-logo.png"}
+			%a{:href => "#help-dialog", "data-toggle" => "modal", :style => "text-decoration: none; outline: 0;"}
+				%img{:src => "images/pokephile-logo.png", :title => "Get the deets on your faves!", :alt => "Pokephile."}
+				%i{:class => "icon-question-sign", :style => "vertical-align: top; margin-left: -10px;"}
 		= yield

@@ -39,7 +39,7 @@ class Parser
 	    elsif dex_num == "479"
 	    	image_link = "http://img.pokemondb.net/artwork/rotom-normal.jpg"
 	    elsif dex_num == "492"
-	    	image_link = "http://img.pokemondb.net/artwork/shaymin-sky.jpg"
+	    	image_link = "http://img.pokemondb.net/artwork/shaymin-land.jpg"
 	    end
 
 	    types = Array.new
