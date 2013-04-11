@@ -2,9 +2,9 @@
 %html
 	%head
 		%title Give Me A Pokemon
-		%link(rel="icon" type="image/png" href="images/pokeball-icon.png")
-		%link(rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css")
-		%link(rel="stylesheet" href="css/styles.css")
+		%link(rel="icon" type="image/png" href="/img/pokeball-icon.png")
+		%link(rel="stylesheet" href="/css/bootstrap.css")
+		%link(rel="stylesheet" href="/css/styles.css")
 		%link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Exo" type="text/css")
 		:javascript
 			var _gaq = _gaq || [];
@@ -17,11 +17,10 @@
 			  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 	%body
-		%script{:type => "text/javascript", :src  => "http://code.jquery.com/jquery-1.8.3.min.js"}
-		%script{:type => "text/javascript", :src  => "http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"}
-		%script{:type => "text/javascript", :src  => "http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"}
+		%script{:type => "text/javascript", :src  => "/js/jquery.js"}
+		%script{:type => "text/javascript", :src  => "/js/bootstrap.js"}
 		#about-body
-			Copyright &copy <a href="http://larryprice.github.com" title="My blog" alt="Link to Blog" target="_blank">Larry Price</a> 2013
+			Copyright &copy <a href="http://larryprice.github.io" title="My blog" alt="Link to Blog" target="_blank">Larry Price</a> 2013
 		.help-dialog{:id => "help-dialog", :class => "modal hide fade in", :style => "display: none;"}
 			.help-header{:class => "modal-header", :style => "font-size: 30px; font-weight: bold;"}
 				%a{:class => "close", "data-dismiss" => "modal"}
@@ -82,7 +81,7 @@
 					%p
 						%ul
 							%li
-								<a href="http://www.shaketheglitter.com/content/desktop-backgrounds" target="_blank">Shake the Glitter</a> for the <a href="images/pokeball-bg.png" target="_blank">background image</a>.
+								<a href="http://www.shaketheglitter.com/content/desktop-backgrounds" target="_blank">Shake the Glitter</a> for the <a href="/img/pokeball-bg.png" target="_blank">background image</a>.
 							%li
 								<a href="http://pokemon.wikia.com/wiki/List_of_Pok%C3%A9mon" target="_blank">The Pokémon Wiki</a> for the Pokémon details.
 							%li
@@ -100,6 +99,6 @@
 					Close
 		#logo
 			%a{:href => "#help-dialog", "data-toggle" => "modal", :style => "text-decoration: none; outline: 0;"}
-				%img{:src => "images/pokephile-logo.png", :title => "Get the deets on your faves!", :alt => "Pokephile."}
+				%img{:src => "/img/pokephile-logo.png", :title => "Get the deets on your faves!", :alt => "Pokephile."}
 				%i{:class => "icon-question-sign", :style => "vertical-align: top; margin-left: -10px;"}
 		= yield

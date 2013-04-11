@@ -3,7 +3,7 @@ require_relative '../../../models/type'
 
 describe TypeBuilder do
 	before:all do
-		Mongoid.load! '../../../mongoid.yml', :test
+		Mongoid.load! "#{File.dirname(__FILE__)}/../../../mongoid.yml", :test
 	end
 	before:each do
 		Type.delete_all

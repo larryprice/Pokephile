@@ -4,7 +4,7 @@ require 'mongoid'
 
 describe Populater do
 	before:all do
-		Mongoid.load! '../../../mongoid.yml', :test
+		Mongoid.load! "#{File.dirname(__FILE__)}/../../../mongoid.yml", :test
 	end
 
 	before:each do

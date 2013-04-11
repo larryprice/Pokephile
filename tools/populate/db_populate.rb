@@ -23,7 +23,7 @@ ARGV.each do |arg|
 	end
 end
 
-Mongoid.load! '../mongoid.yml', env
+Mongoid.load! "../../mongoid.yml", env
 
 puts "Adding first #{num_pokemon} Pokemon to #{env} database..."
 

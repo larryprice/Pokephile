@@ -17,7 +17,7 @@
 				= "Poor Defensively Against: #{stringify_types_list(@weaks)}"
 - else
 	#gir-image
-		%img{:src => "images/girkachu.png"}
+		%img{:src => "/img/girkachu.png"}
 		%br
 		= "I don't recognize the Pokémon '#{@bad_input}.'"
 		- unless Pokemon.count == 0

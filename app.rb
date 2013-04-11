@@ -7,7 +7,7 @@ require_relative 'matcher'
 
 class Pokedex < Sinatra::Base
 	configure do
-	  Mongoid.load! 'mongoid.yml'
+	  Mongoid.load! "#{File.dirname(__FILE__)}/mongoid.yml"
 		set :pokemon_names, Pokemon.only(:name).map {|x| x.name}
 	end
 

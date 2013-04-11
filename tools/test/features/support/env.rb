@@ -7,7 +7,7 @@ require_relative '../../../populate/populater'
 
 ENV['MONGOID_ENV'] = 'test'
 
-Mongoid.load! '../../mongoid.yml'
+Mongoid.load! "#{File.dirname(__FILE__)}/../../../../mongoid.yml", :test
 Populater.new.populate 20
 
 require_relative "../../../../app"
