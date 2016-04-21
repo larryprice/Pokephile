@@ -1,14 +1,14 @@
 source "https://rubygems.org"
 
-ruby '1.9.3'
+ruby '2.3.0'
 
-gem 'sinatra', '~>1.4'
-gem 'haml', '~>4.0'
-gem 'mongoid', '~>3.1'
-gem 'amatch', '~>0.2'
+gem 'sinatra'
+gem 'haml'
+gem 'mongoid'
+gem 'amatch'
 
 group :development, :test do
-	gem 'capybara', '~>2.1'
-	gem 'rspec', '~>2.13'
-	gem 'nokogiri', '~>1.5'
+	gem 'capybara'
+	gem 'rspec'
+	gem 'nokogiri'
 end

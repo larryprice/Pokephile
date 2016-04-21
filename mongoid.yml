@@ -1,24 +1,22 @@
 development:
-  sessions:
+  clients:
     default:
       database: dev_pokedex
       hosts:
         - localhost
-      options:
-        consistency: :strong
   options:
+    raise_not_found_error: false
 
 test:
-  sessions:
+  clients:
     default:
       database: test_pokedex
       hosts:
         - localhost
 
 production:
-  sessions:
+  clients:
     default:
       uri: <%= ENV['MONGOLAB_URI'] %>
-      options:
-        skip_version_check: true
-        safe: true
+  options:
+    raise_not_found_error: false
